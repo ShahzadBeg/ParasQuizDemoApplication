@@ -5,6 +5,9 @@ import "./Result.css";
 
 const Result = ({ name, score }) => {
   const history = useNavigate();
+  var backTohome = () => {
+    history("/");
+  };
 
   useEffect(() => {
     if (!name) {
@@ -20,7 +23,7 @@ const Result = ({ name, score }) => {
         color="secondary"
         size="large"
         style={{ alignSelf: "center", marginTop: 20 }}
-        href="/"
+        onClick={backTohome}
       >
         Go to homepage
       </Button>
